@@ -1,7 +1,7 @@
 # Final-Project_Alpha
 
 ## Pengenalan Proyek
-Fokus proyek ini adalah untuk menganalisis data dan membangun model machine learning yang sesuai dengan kebutuhan bisnis. Proyek ini mencakup semua tahap pengembangan model, mulai dari perumusan masalah, pembersihan data, pemilihan fitur, hingga evaluasi model dan pemberian rekomendasi.
+Fokus proyek ini adalah untuk menganalisis data dan membangun model machine learning yang sesuai dengan kebutuhan bisnis OLIST, yaitu E-Commerce yang berada di negara Brazil. Proyek ini mencakup semua tahap pengembangan model, mulai dari perumusan masalah, pembersihan data, pemilihan fitur, hingga evaluasi model dan pemberian rekomendasi.
 
 ## Langkah-langkah Pengerjaan
 1. **Perumusan Masalah**: Menentukan masalah bisnis yang ingin dipecahkan dan tujuan dari model yang dibangun.
