@@ -1,5 +1,8 @@
 # Final-Project_Alpha
 
+![1_CRi_TRcr4IFDoTB68-ndew](https://github.com/user-attachments/assets/b4ae2b91-83f3-41de-946b-7f08bad0a500)
+
+
 ## Context
 Perkembangan e-commerce di Brazil menunjukkan pertumbuhan yang sangat pesat dalam beberapa tahun terakhir. Pada tahun 2023, pasar ritel e-commerce di Brazil menghasilkan pendapatan lebih dari 36 miliar dolar AS, dan menurut estimasi dari Statista, pendapatan ini akan melampaui 60 miliar dolar AS pada tahun 2025. Hal ini mencerminkan pertumbuhan yang signifikan dalam industri ini, yang diperkirakan akan terus berlanjut.
 
@@ -85,6 +88,23 @@ Setelah menjalani analisis dan modelling, berikut merupakan konklusi untuk bisni
 
 7. Penentuan strategi pemasaran berdasarkan kluster terbukti lebih efektif dibandingkan dengan pendekatan yang menyasar seluruh pelanggan secara umum. Segmentasi ini memungkinkan pemahaman yang lebih mendalam tentang perilaku pelanggan yang berbeda, sehingga memungkinkan penerapan strategi pemasaran yang lebih terarah dan memberikan keuntungan yang lebih tinggi.
 
+## Rekomendation
 
+### Recomendation for Model
+Untuk meningkatkan performa model, berikut merupakan rekomendasi yang dapat dilakukan di penelitian selanjutnya:
+- Menggunakan algoritma lain seperti DBScan, agglomerative clustering, dll untuk perbandingannya lebih lanjut.
+- Feature Engineering Lebih Lanjut: dapat dilakukan penambahan fitur interaksi dan polinomial untuk menangkap hubungan non-linear antara variabel.
+- Investigasi Pengaruh Faktor Eksternal: Melakukan studi tentang pengaruh faktor eksternal seperti kebijakan pemerintah, perubahan iklim, dan perkembangan infrastruktur terhadap harga rumah. Mengintegrasikan data eksternal ini dalam model untuk meningkatkan akurasi prediksi.
+
+Dengan melaksanakan rekomendasi ini, penelitian selanjutnya dapat memperbaiki model prediksi harga rumah, menghasilkan estimasi yang lebih akurat, dan memberikan wawasan yang lebih mendalam bagi pengambilan keputusan bisnis.
+
+### Recomendation for Business
+Berikut merupakan rekomendasi untuk bisnis OLIST:
+1. Mengingat efektivitas promosi besar seperti Black Friday dalam meningkatkan volume pesanan dan pendapatan terutama dari klaster Big Spenders, perusahaan e-commerce harus merencanakan dan melaksanakan promosi besar secara teratur. Selain itu, memperkuat program poin dan hadiah pada kartu kredit akan mendorong lebih banyak transaksi dari klaster ini, karena mereka cenderung memanfaatkan manfaat tersebut.
+
+2. Untuk menjaga dan meningkatkan kepercayaan pelanggan, terutama dari klaster Big Spenders, penting untuk terus meningkatkan efisiensi pengiriman. Menambah mitra pengiriman/kurir dapat menghindari overload pada beberapa mitra yang ada dan memastikan pengiriman tetap cepat dan tepat waktu. Menetapkan standar waktu pengiriman yang konsisten, misalnya dalam 5 hari, juga akan membantu dalam menjaga kepuasan pelanggan.
+
+3. Targetkan Penawaran Khusus kepada Klaster Big Spenders:
+Mengingat klaster Big Spenders memberikan kontribusi terbesar terhadap pendapatan, perusahaan harus fokus pada strategi retensi yang diarahkan kepada mereka. Penawaran khusus, program loyalitas yang eksklusif, dan layanan pelanggan yang dipersonalisasi akan meningkatkan kepuasan dan loyalitas klaster ini. Selain itu, evaluasi rutin terhadap respon mereka terhadap berbagai promosi dapat membantu dalam merancang strategi pemasaran yang lebih efektif.
 
 
