@@ -44,108 +44,47 @@ Untuk menentukan jumlah klaster dengan algoritma K-Means, kami menggunakan:
 ![HRhd2Y0](https://github.com/user-attachments/assets/efb0df9e-8d08-472e-9dc6-946087e92f60)
 
 
-Setiap fitur atau kolom dari dataset dijelaskan di bawah ini:
+Dataset Olist ini memiliki 9 file yang terpisah, untuk menggabungkannya diperlukan primary key sesuai pada gambar diatas.
 
-* fitur pada tabel `customers`:
+## Conclusion
+### For Model
+Setelah menjalani modelling diatas dan menganalisanya, dapat diambil kesimpulang bahwa:
+- Dari 2 metode clustering k-means menggunakan PCA dan RFM,
+- Cluster 0 (Bargain Spenders):
 
-Fitur | Deskripsi
-----------|---------------
-**customer_id** | kunci untuk order dataset. Setiap order memiliki id yang unik.
-**customer_unique_id**    | identifikasi  unik setiap customer.
-**customer_zip_code_prefix** | 5 digit pertama kode pos customer.
-**customer_city** | nama kota customer.
-**customer_state** |  provinsi customer.
+    - Rata-rata memiliki recency sekitar 241.54 hari, dengan frekuensi pembelian sekitar 1.18 kali, dan nilai pembelian rata-rata sebesar 102.58 unit mata uang.
+    - Median recency adalah 222 hari, dengan median frequency pembelian sebesar 1 kali, dan median monetary sebesar 81.75 unit mata uang.
+    - Mereka cenderung melakukan pembelian dengan nilai yang lebih rendah dibandingkan cluster lainnya, tetapi dengan frekuensi yang relatif stabil.
+- Cluster 1 (Big Spenders):
 
-* fitur pada tabel `sellers` :
+    - Rata-rata memiliki recency sekitar 248.43 hari, dengan frekuensi pembelian sekitar 2.70 kali, dan nilai pembelian rata-rata sebesar 2391.31 unit mata uang.
+    - Median recency adalah 221 hari, dengan median frequency pembelian sebesar 1 kali, dan median monetary sebesar 1999 unit mata uang.
+    - Mereka adalah kelompok dengan nilai pembelian tertinggi dan frekuensi pembelian yang cukup tinggi juga.
+- Cluster 2 (Value Spenders):
 
-Fitur | Deskripsi
-----------|---------------
-**seller_id** |   identifikasi unik setiap penjual.
-**seller_zip_code_prefix** | 5 digit pertama kode pos penjual.
-**seller_city** | nama kota penjual.
-**seller_state** | provinsi penjual.
+    - Rata-rata memiliki recency sekitar 243.79 hari, dengan frekuensi pembelian sekitar 1.87 kali, dan nilai pembelian rata-rata sebesar 624.39 unit mata uang.
+    - Median recency adalah 223 hari, dengan median frequency pembelian sebesar 1 kali, dan median monetary sebesar 549 unit mata uang.
+    - Meskipun tidak sebesar Cluster 1, mereka cenderung melakukan pembelian dengan nilai yang lebih tinggi daripada Cluster 0, namun dengan frekuensi yang tidak terlalu tinggi.
 
+- Dari hasil clustering, akan digunakan hasil dari K-Means clustering RFM dibandingkan PCA dengan total cluster 3.
+- Keempat sistem rekomendasi ini memiliki tujuan untuk meningkatkan kepuasan pelanggan, mendorong pembelian lebih lanjut, dan mengoptimalkan nilai sepanjang perjalanan pembelian pelanggan. Dengan menggunakan data mengenai pola pembelian dan preferensi pelanggan, bisnis dapat menghadirkan pengalaman yang lebih personal dan menguntungkan bagi setiap pelanggan mereka.
 
-* fitur pada tabel `order_items`:
+### For Business
+Setelah menjalani analisis dan modelling, berikut merupakan konklusi untuk bisnis Olist:
+1. Metode pembayaran yang paling umum digunakan di Brasil adalah kartu kredit. Hal ini berlaku merata di semua klaster pelanggan. Popularitas kartu kredit di Brasil disebabkan oleh fleksibilitas pembayaran cicilan tanpa bunga, program poin dan hadiah, serta promosi dan diskon eksklusif yang ditawarkan oleh berbagai merchant.
 
-Fitur | Deskripsi
-----------|---------------
-**order_id** | identifikasi unik setiap order.
-**order_item_id** | nomor urut untuk mengidentifikasi jumlah item yang termasuk dalam pesanan yang sama.
-**product_id** |identifikasi unik setiap produk.
-**seller_id** | identifikasi unik setiap penjual.
-**shipping_limit_date** | menunjukkan tanggal batas pengiriman penjual untuk menangani pesanan ke mitra logistik.
-**price** | harga item.
-**freight_value** | biaya ongkos kirim tiap satu produk.
+2.  Semua klaster pelanggan, baik Bargain Spenders, Value Spenders, maupun Big Spenders, menunjukkan bahwa pengiriman barang di 5 kota utama umumnya lebih cepat daripada estimasi yang diberikan. Pengiriman yang lebih cepat ini dapat meningkatkan kepercayaan pelanggan terhadap e-commerce tersebut. Namun, terdapat variasi dalam pengiriman di beberapa kota untuk klaster Big Spenders, seperti di Salvador yang membutuhkan waktu lebih lama.
 
-* fitur pada tabel  `order_payments`:
+3.  Lonjakan signifikan dalam jumlah pesanan dan pendapatan pada November 2017, yang bertepatan dengan Black Friday, menunjukkan bahwa promosi besar sangat efektif, terutama untuk klaster Big Spenders. Setelah periode Black Friday, pendapatan dan volume pesanan dari klaster ini tetap lebih tinggi dibandingkan klaster lainnya, menandakan bahwa mereka cenderung tetap aktif setelah tertarik dengan promosi besar.
 
-Feature | Description
-----------|---------------
-**order_id** | identifikasi unik setiap order.
-**payment_sequential** | pelanggan dapat membayar pesanan dengan lebih dari satu metode pembayaran. Jika dia melakukannya, urutan akan dibuat untuk mengakomodasi semua pembayaran.
-**payment_type** |  metode pembayaran yang dipilih oleh customer.
-**payment_installments** | jumlah angsuran yang dipilih oleh customer.
-**payment_value** | total transaksi.
+4.  Klaster Big Spenders konsisten menghasilkan pendapatan tertinggi dengan tren peningkatan pesanan yang stabil. Bargain Spenders memiliki pendapatan dan volume pesanan yang stabil namun lebih rendah dibanding Big Spenders, sedangkan Value Spenders menunjukkan volume pesanan dan pendapatan terendah. Tren musiman menunjukkan peningkatan signifikan selama Q4, dipengaruhi oleh periode belanja liburan.
+
+5. Untuk menjaga loyalitas klaster Big Spenders, penting untuk menjaga ritme pengiriman yang cepat dan menambah jasa kirim/kurir agar pesanan tidak overload pada beberapa mitra pengiriman. Standar pengiriman dalam negeri sebaiknya ditetapkan, misalnya dalam waktu 5 hari. Selain itu, program loyalitas atau penawaran khusus akan lebih efektif jika ditargetkan kepada klaster Big Spenders yang memberikan kontribusi terbesar terhadap pendapatan.
+
+6. Berdasarkan analisis Customer Lifetime Value (CLV), kluster Big Spender memberikan keuntungan yang signifikan dibandingkan dengan kluster lainnya. Namun, penting untuk tidak mengabaikan kluster lainnya. Meskipun kluster Bargain Spender memberikan keuntungan per transaksi yang rendah, volume transaksi yang besar dari kluster ini tetap berkontribusi secara signifikan terhadap total revenue Olist. Oleh karena itu, diperlukan upaya maintenance yang berkelanjutan untuk menjaga dan meningkatkan loyalitas dari semua kluster pelanggan, termasuk Bargain Spender, guna memastikan pertumbuhan pendapatan yang berkelanjutan.
+
+7. Penentuan strategi pemasaran berdasarkan kluster terbukti lebih efektif dibandingkan dengan pendekatan yang menyasar seluruh pelanggan secara umum. Segmentasi ini memungkinkan pemahaman yang lebih mendalam tentang perilaku pelanggan yang berbeda, sehingga memungkinkan penerapan strategi pemasaran yang lebih terarah dan memberikan keuntungan yang lebih tinggi.
 
 
 
-* fitur pada tabel  `orders`:
 
-Fitur | Deskripsi
-----------|---------------
-**order_id** | identifikasi unik setiap order.
-**customer_id** | identifikasi unik setiap customer.
-**order_status** | status pesanan (delivered, shipped, etc).
-**order_purchase_timestamp** | menunjukkan waktu pembelian.
-**order_approved_at** | menunjukkan waktu persetujuan pembayaran.
-**order_delivered_carrier_date** | menunjukkan waktu pengiriman pesanan. Saat itu ditangani ke mitra logistik.
-**order_delivered_customer_date** | Menunjukkan waktu penerimaan pesanan. Saat itu ditangani oleh pelanggan.
-**order_estimated_delivery_date** | Menunjukkan perkiraan tanggal pengiriman yang diinformasikan kepada pelanggan pada saat pembelian.
-
-
-* fitur pada tabel  `order_reviews`:
-
-Fitur | Deskripsi
-----------|---------------
-**review_id** | identifikasi unik setiap review.
-**order_id** |  identifikasi unik setiap order.
-**review_score** | Nilai kepuasan dengan rentang dari 1 sampai 5 yang diberikan oleh pelanggan.
-**review_comment_title** | Judul komentar dari ulasan yang ditinggalkan oleh pelanggan, dalam bahasa Portugis.
-**review_comment_message** | Isi komentar dari ulasan yang ditinggalkan oleh pelanggan, dalam bahasa Portugis.
-**review_creation_date** | Menunjukkan tanggal pengiriman survei kepuasan kepada pelanggan.
-**review_answer_timestamp** | Menampilkan Tanggal waktu jawaban survei kepuasan.
-
-
-* fitur pada tabel  `products`:
-
-Fitur | Deskripsi
-----------|---------------
-**product_id** | id setiap produk.
-**product_category_name** | kategori nama produk, dalam bahasa Portugis.
-**product_name_lenght** | Panjang karakter tiap nama produk.
-**product_description_lenght** | Panjang karakter tiap deskripsi produk.
-**product_photos_qty** | jumlah foto produk yang diterbitkan.
-**product_weight_g** | berat produk diukur dalam gram.
-**product_length_cm** | Panjang produk diukur (cm).
-**product_height_cm** | Tinggi produk diukur  (cm).
-**product_width_cm** | Lebar produk diukur (cm).
-
-
-* fitur pada tabel `geolocation`:
-
-Fitur | Deskripsi
-----------|---------------
-**geolocation_zip_code_prefix** | 5 digit pertama kode pos.
-**geolocation_lat** | kordinat latitude.
-**geolocation_lng** | kordinat longitude.
-**geolocation_city** | nama kota.
-**geolocation_state** | nama provinsi.
-
-
-* fitur pada tabel  `category_name`:
-
-Fitur | Deskripsi
-----------|---------------
-**product_category_name** | nama kategori produk dalam bahasa portugis.
-**product_category_name_english** | nama kategori produk dalam bahasa inggris.
