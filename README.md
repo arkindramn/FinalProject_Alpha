@@ -1,7 +1,11 @@
-# Final-Project_Alpha
+# Brazilian E-Commerce Public Dataset by Olist
 
 ![logo_blue_background_8b55024b33](https://github.com/user-attachments/assets/3d8953f1-f350-4514-9386-33514466aa39)
 
+This Project was carried out by Alpha's Team:
+1. Arkirndra Muhammad Nikola
+2. Valeria Trisna Yunita
+3. Erza Anandhika Valerian Vacquier
 
 ## Context
 Perkembangan e-commerce di Brazil menunjukkan pertumbuhan yang sangat pesat dalam beberapa tahun terakhir. Pada tahun 2023, pasar ritel e-commerce di Brazil menghasilkan pendapatan lebih dari 36 miliar dolar AS, dan menurut estimasi dari Statista, pendapatan ini akan melampaui 60 miliar dolar AS pada tahun 2025. Hal ini mencerminkan pertumbuhan yang signifikan dalam industri ini, yang diperkirakan akan terus berlanjut.
