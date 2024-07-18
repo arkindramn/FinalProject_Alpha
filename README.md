@@ -1,6 +1,6 @@
 # Final-Project_Alpha
 
-![1_CRi_TRcr4IFDoTB68-ndew](https://github.com/user-attachments/assets/b4ae2b91-83f3-41de-946b-7f08bad0a500)
+![logo_blue_background_8b55024b33](https://github.com/user-attachments/assets/3d8953f1-f350-4514-9386-33514466aa39)
 
 
 ## Context
